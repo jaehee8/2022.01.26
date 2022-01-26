@@ -73,9 +73,9 @@
     let value = 0;
     btn.addEventListener('click', function(e) {
       // console.dir(e.target);
+      // console.log(e.target.children[0].style.opacity);
+      //btn클릭했을때 자식의 자식에게 일어나는 이벤트
       
-      console.log(e.target.children[0].style.opacity);
-      // e.target.children[0].style.opacity = value;
       if(value === 0) {
         value = 1;
         e.target.children[0].style.opacity = value;
@@ -85,6 +85,7 @@
         value = 0;
         e.target.children[0].style.opacity = value;
         e.target.style.backgroundColor = 'sienna';
+        console.log(e.target.children[0].style.opacity);
       }
     });
 
