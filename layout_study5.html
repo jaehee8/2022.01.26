@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      box-sizing: border-box;
+    }
+    .display_flex {
+      display: flex;
+    }
+    .flex_direct_column {
+      flex-direction: column;
+    }
+    .justyfy_con_center {
+      justify-content: center;
+    }
+    .alineItems_center {
+      align-items: center;
+    }
+    #container {
+      width: 100vw;
+      height: max-content;
+      overflow: hidden;
+    }
+    #content_wrap .dot_menu{
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid rebeccapurple;
+      border-radius: 50%;
+      margin: 6rem 1rem;
+      cursor: pointer;
+      position: relative;
+    }
+    #content_wrap .dot_menu .textbox {
+      width: 20vw;
+      height: 15vh;
+      border: 1px solid red;
+      position: absolute;
+      /* opacity: 0; */
+    }
+    #box1 {
+      top: 0;
+      right: 5vw;
+    }
+
+    #box2 {
+      top: 0;
+      left: 5vw;
+    }
+
+    #box3 {
+      top: 0;
+      right: 5vw;
+    }
+
+    #box4 {
+      top: 0;
+      left: 5vw;
+    }
+    #box5 {
+      top: 0;
+      right: 5vw;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div id="container" class="display_flex justyfy_con_center alineItems_center">
+    <div id="content_wrap" class="display_flex flex_direct_column">
+      <div class="dot_menu">
+        <div id="box1" class="textbox">
+          <p>
+            Vestibulum elementum tempor scelerisque. Pellentesque vitae dolor venenatis, sollicitudin ipsum id, fermentum nibh. Nulla eget sagittis risus.
+          </p>
+        </div>
+      </div>
+      <div class="dot_menu">
+        <div id="box2" class="textbox">
+          <p>
+            Etiam porttitor sapien ac mauris suscipit pulvinar. Nunc id purus nibh. Mauris ac aliquam nisl. Nam accumsan ligula sed dolor venenatis, at commodo lorem rhoncus.
+          </p>
+        </div>
+      </div>
+      <div class="dot_menu">
+        <div id="box3" class="textbox">
+          <p>
+            Nunc sollicitudin nisl in velit blandit finibus. Nullam velit diam, tincidunt eget nulla sodales, auctor elementum ligula.
+          </p>
+        </div>
+      </div>
+      <div class="dot_menu">
+        <div id="box4" class="textbox">
+          <p>
+            Nunc fermentum eleifend nisl id tincidunt. Ut in nulla libero. Nam imperdiet sapien non lacus pulvinar, at vehicula dui sagittis.
+          </p>
+        </div>
+      </div>
+      <div class="dot_menu">
+        <div id="box5" class="textbox">
+          <p>
+            Nulla eget tincidunt massa, at bibendum eros. Ut erat nunc, egestas sit amet velit ut, sagittis ullamcorper neque.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //1. dot_menu를 클릭하면 textbox 나타나줘
+    //2. textbox 나타날때 중심에서 바깥쪽으로 움직여줘
+    //3. 클릭전에는 textbox 보이지 않음
+    const dotMenu = document.querySelectorAll('.dot_menu');
+    const textBox = document.querySelectorAll('.textbox')
+     
+    console.log(dotMenu);
+    console.log(dotMenu.length);
+    console.log(textBox.length);
+    console.log(textBox);
+    
+    
+    dotMenu[i].addEventListener('click', function() {
+      for(i=0; i< dotMenu.length; i++) {
+        textBox[i].style.opacity = '0';
+        console.log(textBox[i].style.opacity);
+        
+      };
+        
+    });
+    
+
+
+
+
+    
+  </script>
+</body>
+</html>
