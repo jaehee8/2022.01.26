@@ -7,40 +7,85 @@
   <title>Document</title>
   <style>
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
-    #container div {
-      width: 100px;
-      height: 100px;
+    #container {
+      width: 100vw;
+      
+    }
+    #wrap {
+      width: max-content;
+      margin: 0 auto;
+    }
+    #wrap > div {
+      width: 5rem;
+      height: 5rem;
       background-color: sienna;
       border-radius: 50%;
       text-align: center;
       line-height: 100px;
+      margin: 5rem 0;
+      position: relative;
+    }
+    #wrap > div > div {
+      position: absolute;
+      top: 0;
+      left: 10rem;
+      transform: translateX(-50%);
+      width: 10rem;
+      height: 5rem;
+      border: 1px solid seagreen;
+      box-sizing: border-box;
+      /* opacity: 0; */
     }
   </style>
 </head>
 <body>
   <div id="container">
-    <div>item-1</div>
-    <div>item-2</div>
-    <div>item-3</div>
-    <div>item-4</div>
-    <div>item-5</div>
-    <div>item-6</div>
-    <div>item-7</div>
-    <div>item-8</div>
-    <div>item-9</div>
-    <div>item-10</div>
+    <div id="wrap">
+      <div>
+        <div>hoho</div>
+      </div>
+      <div>
+        <div>haha</div>
+      </div>
+      <div>
+        <div>hihi</div>
+      </div>
+      <div>
+        <div>hehe</div>
+      </div>
+    </div>
+    
+
   </div>
 
   <script>
-    const container= document.querySelector('#container');
+    // wrap 을 클릭하면 자식에게 이벤트가 일어나
+    const btn= document.querySelector('#wrap');
+    // console.log(btn);
+    for(i=0; i < btn.children.length; i++ ) {
+      btn.children[i].children[0].style.opacity = '0';
+    };
     
-    container.addEventListener('click', function(e) {
-      console.log(e.target);
-      e.target.style.backgroundColor = 'blue';
+    let value = 0;
+    btn.addEventListener('click', function(e) {
+      // console.dir(e.target);
+      
+      console.log(e.target.children[0].style.opacity);
+      // e.target.children[0].style.opacity = value;
+      if(value === 0) {
+        value = 1;
+        e.target.children[0].style.opacity = value;
+        e.target.style.backgroundColor = 'lightcoral';
+        console.log(e.target.children[0].style.opacity);
+      } else {
+        value = 0;
+        e.target.children[0].style.opacity = value;
+        e.target.style.backgroundColor = 'sienna';
+      }
     });
 
   </script>
