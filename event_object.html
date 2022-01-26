@@ -34,9 +34,10 @@
     const container = document.querySelector('#container');
 
     container.addEventListener('click', function(event) {
-      // console.log(event.target);
-      // event.target.nextElementSibling.style.backgroundColor = 'red';
-      console.log(this);
+      console.log(event.target);
+      event.target.style.backgroundColor = 'red';
+      // console.log(this);
+      // this.style.backgroundColor = 'blue';
     });
 
 
