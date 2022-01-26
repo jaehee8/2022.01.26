@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      width: 100vw;
+
+    }
+
+    #wrap {
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    #wrap>div {
+      width: 5rem;
+      height: 5rem;
+      background-color: sienna;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 100px;
+      margin: 5rem 0;
+      position: relative;
+    }
+
+    #wrap>div>div {
+      position: absolute;
+      top: 0;
+      left: 10rem;
+      transform: translateX(-50%);
+      width: 10rem;
+      height: 5rem;
+      border: 1px solid seagreen;
+      box-sizing: border-box;
+      /* opacity: 0; */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div>
+        <div>hoho</div>
+      </div>
+      <div>
+        <div>haha</div>
+      </div>
+      <div>
+        <div>hihi</div>
+      </div>
+      <div>
+        <div>hehe</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // console.log('hello');
+    // wrap 을 클릭하면 자식에게 이벤트가 일어나
+    const btn = document.querySelector('#wrap');
+    console.log(btn);
+    console.log(btn.children);
+    // ******* for(i=0; i < btn.children.length; i++ ) {
+    // for문 조건식에서 let 선언이 빠져있다.
+    
+    for (let i = 0; i < btn.children.length; i++) {
+      btn.children[i].children[0].style.opacity = '0';
+    };
+
+    // handling을 위한 변수선언
+    let value = 0;
+    btn.addEventListener('click', function(e) {
+      
+      if(value === 0) {
+        // target 요소부터 스타일링하고 value 값을 바꾸도록 순서 바꿈
+        e.target.style.backgroundColor = 'lightcoral';
+        // 클릭했을때 변수 value의 값을 새로이 1로 바꾼다.
+        value = 1;
+        console.log(value);
+        e.target.children[0].style.opacity = value;
+      } else {
+        // target 요소부터 스타일링하고 value 값을 바꾸도록 순서 바꿈
+        e.target.style.backgroundColor = 'sienna';
+        value = 0;
+        console.log(value);
+        e.target.children[0].style.opacity = value;
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
